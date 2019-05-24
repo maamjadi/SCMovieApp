@@ -59,12 +59,20 @@
 				DD8F006822985049009E10A1 /* AppDelegate.swift */,
 				DD8F006A22985049009E10A1 /* ViewController.swift */,
 				DD8F006C22985049009E10A1 /* Main.storyboard */,
-				DD8F00722298504B009E10A1 /* Assets.xcassets */,
-				DD8F00742298504B009E10A1 /* LaunchScreen.storyboard */,
-				DD8F00772298504B009E10A1 /* Info.plist */,
+				DD8F008722985152009E10A1 /* SupportingFiles */,
 				DD8F006F22985049009E10A1 /* SCMovieApp.xcdatamodeld */,
 			);
 			path = SCMovieApp;
+			sourceTree = "<group>";
+		};
+		DD8F008722985152009E10A1 /* SupportingFiles */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F00722298504B009E10A1 /* Assets.xcassets */,
+				DD8F00742298504B009E10A1 /* LaunchScreen.storyboard */,
+				DD8F00772298504B009E10A1 /* Info.plist */,
+			);
+			path = SupportingFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
