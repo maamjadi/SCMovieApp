@@ -69,7 +69,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-7L-M0Y">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ce3-7L-M0Y">
                                 <rect key="frame" x="0.0" y="44" width="414" height="463.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Ce3-7L-M0Y" secondAttribute="height" multiplier="375:420" id="7it-zJ-1rW"/>

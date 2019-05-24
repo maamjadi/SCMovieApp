@@ -20,6 +20,7 @@ extension Movie {
     @NSManaged public var voteCount: Int64
     @NSManaged public var id: Int64
     @NSManaged public var video: Bool
+    @NSManaged public var status: String?
     @NSManaged public var voteAverage: Float
     @NSManaged public var title: String?
     @NSManaged public var popularity: Float

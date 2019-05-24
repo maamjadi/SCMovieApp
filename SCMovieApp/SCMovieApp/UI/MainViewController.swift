@@ -100,6 +100,12 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        guard let controller = UIStoryboard(name: "Main", bundle: nil)
+            .instantiateViewController(withIdentifier: "movieDetail") as? MovieDetailViewController,
+            indexPath.row < tableViewData.count else { return }
+        let movieId = tableViewData[indexPath.row].id
+        controller.movieId = Int(movieId)
+        present(controller, animated: true)
     }
 }
 extension MainViewController: UISearchBarDelegate {
