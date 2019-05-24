@@ -23,6 +23,7 @@ struct MovieObjectDTO: Decodable {
     var adult: Bool?
     var overview: String?
     var release_date: String?
+    var status: String?
 }
 
 

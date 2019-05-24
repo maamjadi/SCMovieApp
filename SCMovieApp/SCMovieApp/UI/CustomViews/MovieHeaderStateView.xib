@@ -11,14 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MovieHeaderStateView" customModule="SCMovieApp" customModuleProvider="target">
             <connections>
-                <outlet property="dividerViews" destination="wOF-Vz-KwA" id="uRG-hy-UiK"/>
-                <outlet property="headerLabels" destination="3D9-x8-Zs5" id="qtB-S4-JZ0"/>
                 <outlet property="languageLabel" destination="WWO-qu-vyX" id="MHY-nO-i73"/>
                 <outlet property="popularityLabel" destination="BlH-4W-ib5" id="Dgd-u4-UyA"/>
                 <outlet property="statusLabel" destination="sXi-L5-Z65" id="vTB-GJ-f4J"/>
                 <outletCollection property="headerLabels" destination="aAn-Kx-xmS" collectionClass="NSMutableArray" id="jL1-Ko-0C6"/>
                 <outletCollection property="headerLabels" destination="nnB-ll-iA9" collectionClass="NSMutableArray" id="6qr-n1-K1e"/>
                 <outletCollection property="dividerViews" destination="Eq9-qk-zDY" collectionClass="NSMutableArray" id="e51-YY-FAN"/>
+                <outletCollection property="dividerViews" destination="wOF-Vz-KwA" collectionClass="NSMutableArray" id="uy1-YZ-oSW"/>
+                <outletCollection property="headerLabels" destination="3D9-x8-Zs5" collectionClass="NSMutableArray" id="J2u-Sv-1Qc"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>

@@ -49,13 +49,14 @@ public class Movie: NSManagedObject {
                 movie.title = movieDTO.title
                 movie.popularity = movieDTO.popularity ?? 0
                 movie.posterPath = movieDTO.poster_path
-                movie.originalLanguage = movieDTO.poster_path
+                movie.originalLanguage = movieDTO.original_language
                 movie.originalTitle = movieDTO.original_title
                 movie.genres = movieDTO.genres?.map({ $0.name })
                 movie.backdropPath = movieDTO.backdrop_path
                 movie.adult = movieDTO.adult ?? false
                 movie.overView = movieDTO.overview
                 movie.releaseDate = movieDTO.release_date
+                movie.status = movieDTO.status
                 movie.fetchDate = date
 
                 movies.append(movie)
