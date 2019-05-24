@@ -13,49 +13,50 @@ import CoreData
 @objc(Movie)
 public class Movie: NSManagedObject {
 
-    class func fetchRates(for id: Int64, context: NSManagedObjectContext) -> NSFetchedResultsController<Movie>? {
-        return Movie.cd_fetchAll(withPredicate: NSPredicate(format: "id == %@", id),
+    class func fetchRates(for id: Int, context: NSManagedObjectContext) -> NSFetchedResultsController<Movie>? {
+        return Movie.cd_fetchAll(withPredicate: NSPredicate(format: "id == \(id)"),
                                 sortedBy: [("date", .desc)],
                                 delegate: nil,
                                 faulting: false,
                                 context: context)
     }
 
-    class func getItem(by id: Int64, context: NSManagedObjectContext) -> Movie? {
+    class func getItem(by id: Int, context: NSManagedObjectContext) -> Movie? {
         let results: [Movie]? = Movie.cd_findAll(inContext: context,
-                                               predicate: NSPredicate(format: "id == %@", id))
+                                               predicate: NSPredicate(format: "id == \(id)"))
         return results?.first
     }
 
-    class func getItems(for date: NSDate, context: NSManagedObjectContext) -> [Movie]? {
+    class func getItems(for date: String, context: NSManagedObjectContext) -> [Movie]? {
         let results: [Movie]? = Movie.cd_findAll(inContext: context,
                                                predicate: NSPredicate(format: "fetchDate == %@", date))
         return results
     }
 
-    class func addOrUpdateRates(from content: GeneralResponseDTO, context: NSManagedObjectContext) -> [Movie] {
+    class func addOrUpdateRates(from content: GeneralResponseDTO, date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
         return addOrUpdateRates(from: content.results, context: context)
     }
 
-    class func addOrUpdateRates(from content: [MovieObjectDTO], context: NSManagedObjectContext) -> [Movie] {
+    class func addOrUpdateRates(from content: [MovieObjectDTO], date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
         var movies = [Movie]()
         content.forEach { movieDTO in
-            if let movie = Movie.getItem(by: Int64(movieDTO.id),
+            if let id = movieDTO.id, let movie = Movie.getItem(by: id,
                                        context: context) ?? Movie.cd_new(inContext: context) {
-                movie.voteCount = Int64(movieDTO.vote_count)
-                movie.id = Int64(movieDTO.id)
-                movie.video = movieDTO.video
-                movie.voteAverage = movieDTO.vote_average
+                movie.voteCount = Int64(movieDTO.vote_count ?? 0)
+                movie.id = Int64(movieDTO.id ?? 0)
+                movie.video = movieDTO.video ?? false
+                movie.voteAverage = movieDTO.vote_average ?? 0
                 movie.title = movieDTO.title
-                movie.popularity = movieDTO.popularity
+                movie.popularity = movieDTO.popularity ?? 0
                 movie.posterPath = movieDTO.poster_path
                 movie.originalLanguage = movieDTO.poster_path
                 movie.originalTitle = movieDTO.original_title
                 movie.genres = movieDTO.genres?.map({ $0.name })
                 movie.backdropPath = movieDTO.backdrop_path
-                movie.adult = movieDTO.adult
+                movie.adult = movieDTO.adult ?? false
                 movie.overView = movieDTO.overview
                 movie.releaseDate = movieDTO.release_date
+                movie.fetchDate = date
 
                 movies.append(movie)
             }

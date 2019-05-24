@@ -31,6 +31,6 @@ extension Movie {
     @NSManaged public var adult: Bool
     @NSManaged public var overView: String?
     @NSManaged public var releaseDate: String?
-    @NSManaged public var fetchDate: NSDate
+    @NSManaged public var fetchDate: String?
 
 }

@@ -30,6 +30,8 @@
 		DD8F00A722987D57009E10A1 /* MovieObjectDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00A622987D57009E10A1 /* MovieObjectDTO.swift */; };
 		DD8F00AA2298812E009E10A1 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00A82298812E009E10A1 /* Movie+CoreDataClass.swift */; };
 		DD8F00AB2298812E009E10A1 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00A92298812E009E10A1 /* Movie+CoreDataProperties.swift */; };
+		DD8F00AD2298887F009E10A1 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00AC2298887F009E10A1 /* DateExtension.swift */; };
+		DD8F00AF22988BAA009E10A1 /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00AE22988BAA009E10A1 /* UIImageViewExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +60,8 @@
 		DD8F00A622987D57009E10A1 /* MovieObjectDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieObjectDTO.swift; sourceTree = "<group>"; };
 		DD8F00A82298812E009E10A1 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
 		DD8F00A92298812E009E10A1 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		DD8F00AC2298887F009E10A1 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		DD8F00AE22988BAA009E10A1 /* UIImageViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +150,8 @@
 				DD8F008A2298572C009E10A1 /* UIColorExtension.swift */,
 				DD8F009322986136009E10A1 /* CALayerExtension.swift */,
 				DD8F00A022987683009E10A1 /* UISearchControllerExtension.swift */,
+				DD8F00AC2298887F009E10A1 /* DateExtension.swift */,
+				DD8F00AE22988BAA009E10A1 /* UIImageViewExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -276,10 +282,12 @@
 				DD8F008B2298572C009E10A1 /* UIColorExtension.swift in Sources */,
 				DD8F009922986602009E10A1 /* TagView.swift in Sources */,
 				DD8F00AB2298812E009E10A1 /* Movie+CoreDataProperties.swift in Sources */,
+				DD8F00AD2298887F009E10A1 /* DateExtension.swift in Sources */,
 				DD8F006922985049009E10A1 /* AppDelegate.swift in Sources */,
 				DD8F008522985104009E10A1 /* ManagedObjectExtension.swift in Sources */,
 				DD8F007122985049009E10A1 /* SCMovieApp.xcdatamodeld in Sources */,
 				DD8F008622985104009E10A1 /* PersistentContainerExtensions.swift in Sources */,
+				DD8F00AF22988BAA009E10A1 /* UIImageViewExtension.swift in Sources */,
 				DD8F0096229865D8009E10A1 /* MovieDetailViewController.swift in Sources */,
 				DD8F009422986136009E10A1 /* CALayerExtension.swift in Sources */,
 				DD8F009F22987262009E10A1 /* UIViewXRadialGradient.swift in Sources */,

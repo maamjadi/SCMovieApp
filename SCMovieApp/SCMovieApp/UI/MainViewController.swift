@@ -13,6 +13,12 @@ class MainViewController: UIViewController {
     @IBOutlet weak var navigationTitle: UILabel!
     @IBOutlet weak var tableView: UITableView!
 
+    var tableViewData = [Movie]() {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+
     private let cellIdentifier = "movieCell"
     private let searchController = UISearchController(searchResultsController: nil)
 
@@ -22,7 +28,15 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil),
                            forCellReuseIdentifier: cellIdentifier)
+        self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
         setupNavigationBar()
+
+        MovieHandler.shared.getPopularMovies { [weak self] (success, error, movies) in
+            if let movies = movies, success, error == nil {
+                self?.tableViewData = movies
+            }
+        }
+
     }
 
     private func addNavigationBarTitle() {
@@ -70,14 +84,18 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return tableViewData.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-            as? MovieTableViewCell else {
+            as? MovieTableViewCell,
+            indexPath.row < tableViewData.count else {
             return MovieTableViewCell()
         }
+        let data = tableViewData[indexPath.row]
+        cell.data = data
+        cell.selectionStyle = .none
         return cell
     }
 
