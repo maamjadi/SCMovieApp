@@ -13,7 +13,7 @@ import CoreData
 @objc(Movie)
 public class Movie: NSManagedObject {
 
-    class func fetchRates(for id: Int, context: NSManagedObjectContext) -> NSFetchedResultsController<Movie>? {
+    class func fetchMovies(for id: Int, context: NSManagedObjectContext) -> NSFetchedResultsController<Movie>? {
         return Movie.cd_fetchAll(withPredicate: NSPredicate(format: "id == \(id)"),
                                 sortedBy: [("date", .desc)],
                                 delegate: nil,
@@ -33,11 +33,11 @@ public class Movie: NSManagedObject {
         return results
     }
 
-    class func addOrUpdateRates(from content: GeneralResponseDTO, date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
-        return addOrUpdateRates(from: content.results, context: context)
+    class func addOrUpdateMovies(from content: GeneralResponseDTO, date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
+        return addOrUpdateMovies(from: content.results, context: context)
     }
 
-    class func addOrUpdateRates(from content: [MovieObjectDTO], date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
+    class func addOrUpdateMovies(from content: [MovieObjectDTO], date: String? = nil, context: NSManagedObjectContext) -> [Movie] {
         var movies = [Movie]()
         content.forEach { movieDTO in
             if let id = movieDTO.id, let movie = Movie.getItem(by: id,
@@ -49,13 +49,14 @@ public class Movie: NSManagedObject {
                 movie.title = movieDTO.title
                 movie.popularity = movieDTO.popularity ?? 0
                 movie.posterPath = movieDTO.poster_path
-                movie.originalLanguage = movieDTO.poster_path
+                movie.originalLanguage = movieDTO.original_language
                 movie.originalTitle = movieDTO.original_title
                 movie.genres = movieDTO.genres?.map({ $0.name })
                 movie.backdropPath = movieDTO.backdrop_path
                 movie.adult = movieDTO.adult ?? false
                 movie.overView = movieDTO.overview
                 movie.releaseDate = movieDTO.release_date
+                movie.status = movieDTO.status
                 movie.fetchDate = date
 
                 movies.append(movie)

@@ -17,8 +17,19 @@ class MovieDetailViewController: UIViewController {
     @IBOutlet weak var movieHeaderState: MovieHeaderStateView!
     @IBOutlet weak var movieTagView: TagView!
 
+    var movieId: Int!
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        MovieHandler.shared.getMovie(with: movieId) { [weak self] (success, error, movie) in
+            self?.movieTitle.text = movie?.title
+            self?.starLabel.text = String(movie?.voteAverage ?? 0)
+            if let posterPathURL = MovieHandler.shared.getImageURL(from: movie?.posterPath) {
+                self?.MovieImage.setImage(from: posterPathURL)
+            }
+            self?.descriptionLabel.text = movie?.overView
+            self?.movieHeaderState.data = movie
+        }
     }
 
     @IBAction func backButtonAction(_ sender: Any) {
