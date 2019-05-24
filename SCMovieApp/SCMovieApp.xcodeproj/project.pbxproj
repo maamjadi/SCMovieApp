@@ -20,6 +20,12 @@
 		DD8F008F229859CD009E10A1 /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F008E229859CD009E10A1 /* MovieTableViewCell.swift */; };
 		DD8F0092229859ED009E10A1 /* MovieTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD8F0091229859ED009E10A1 /* MovieTableViewCell.xib */; };
 		DD8F009422986136009E10A1 /* CALayerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F009322986136009E10A1 /* CALayerExtension.swift */; };
+		DD8F0096229865D8009E10A1 /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F0095229865D8009E10A1 /* MovieDetailViewController.swift */; };
+		DD8F009922986602009E10A1 /* TagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F009822986602009E10A1 /* TagView.swift */; };
+		DD8F009B22986913009E10A1 /* MovieHeaderStateView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DD8F009A22986913009E10A1 /* MovieHeaderStateView.xib */; };
+		DD8F009D22986E7A009E10A1 /* MovieHeaderStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F009C22986E7A009E10A1 /* MovieHeaderStateView.swift */; };
+		DD8F009F22987262009E10A1 /* UIViewXRadialGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F009E22987262009E10A1 /* UIViewXRadialGradient.swift */; };
+		DD8F00A122987683009E10A1 /* UISearchControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F00A022987683009E10A1 /* UISearchControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +44,12 @@
 		DD8F008E229859CD009E10A1 /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		DD8F0091229859ED009E10A1 /* MovieTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieTableViewCell.xib; sourceTree = "<group>"; };
 		DD8F009322986136009E10A1 /* CALayerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CALayerExtension.swift; sourceTree = "<group>"; };
+		DD8F0095229865D8009E10A1 /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		DD8F009822986602009E10A1 /* TagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagView.swift; sourceTree = "<group>"; };
+		DD8F009A22986913009E10A1 /* MovieHeaderStateView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieHeaderStateView.xib; sourceTree = "<group>"; };
+		DD8F009C22986E7A009E10A1 /* MovieHeaderStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieHeaderStateView.swift; sourceTree = "<group>"; };
+		DD8F009E22987262009E10A1 /* UIViewXRadialGradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewXRadialGradient.swift; sourceTree = "<group>"; };
+		DD8F00A022987683009E10A1 /* UISearchControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISearchControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +133,7 @@
 			children = (
 				DD8F008A2298572C009E10A1 /* UIColorExtension.swift */,
 				DD8F009322986136009E10A1 /* CALayerExtension.swift */,
+				DD8F00A022987683009E10A1 /* UISearchControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -128,9 +141,11 @@
 		DD8F008C229859A1009E10A1 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				DD8F0097229865E8009E10A1 /* CustomViews */,
 				DD8F008D229859AC009E10A1 /* MovieCell */,
 				DD8F006A22985049009E10A1 /* MainViewController.swift */,
 				DD8F006C22985049009E10A1 /* Main.storyboard */,
+				DD8F0095229865D8009E10A1 /* MovieDetailViewController.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -142,6 +157,17 @@
 				DD8F0091229859ED009E10A1 /* MovieTableViewCell.xib */,
 			);
 			path = MovieCell;
+			sourceTree = "<group>";
+		};
+		DD8F0097229865E8009E10A1 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F009E22987262009E10A1 /* UIViewXRadialGradient.swift */,
+				DD8F009822986602009E10A1 /* TagView.swift */,
+				DD8F009A22986913009E10A1 /* MovieHeaderStateView.xib */,
+				DD8F009C22986E7A009E10A1 /* MovieHeaderStateView.swift */,
+			);
+			path = CustomViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +229,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8F00762298504B009E10A1 /* LaunchScreen.storyboard in Resources */,
+				DD8F009B22986913009E10A1 /* MovieHeaderStateView.xib in Resources */,
 				DD8F00732298504B009E10A1 /* Assets.xcassets in Resources */,
 				DD8F0092229859ED009E10A1 /* MovieTableViewCell.xib in Resources */,
 				DD8F006E22985049009E10A1 /* Main.storyboard in Resources */,
@@ -217,13 +244,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD8F006B22985049009E10A1 /* MainViewController.swift in Sources */,
+				DD8F00A122987683009E10A1 /* UISearchControllerExtension.swift in Sources */,
 				DD8F008B2298572C009E10A1 /* UIColorExtension.swift in Sources */,
+				DD8F009922986602009E10A1 /* TagView.swift in Sources */,
 				DD8F006922985049009E10A1 /* AppDelegate.swift in Sources */,
 				DD8F008522985104009E10A1 /* ManagedObjectExtension.swift in Sources */,
 				DD8F007122985049009E10A1 /* SCMovieApp.xcdatamodeld in Sources */,
 				DD8F008622985104009E10A1 /* PersistentContainerExtensions.swift in Sources */,
+				DD8F0096229865D8009E10A1 /* MovieDetailViewController.swift in Sources */,
 				DD8F009422986136009E10A1 /* CALayerExtension.swift in Sources */,
+				DD8F009F22987262009E10A1 /* UIViewXRadialGradient.swift in Sources */,
 				DD8F008F229859CD009E10A1 /* MovieTableViewCell.swift in Sources */,
+				DD8F009D22986E7A009E10A1 /* MovieHeaderStateView.swift in Sources */,
 				DD8F008422985104009E10A1 /* ContextExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

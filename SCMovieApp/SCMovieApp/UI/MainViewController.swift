@@ -22,19 +22,39 @@ class MainViewController: UIViewController {
         tableView.delegate = self
         tableView.register(UINib(nibName: "MovieTableViewCell", bundle: nil),
                            forCellReuseIdentifier: cellIdentifier)
-        navigationController?.navigationBar.shadowImage = UIImage()
+        setupNavigationBar()
     }
 
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        navigationTitle.textColor = UIColor.greyishBrown()
+    private func addNavigationBarTitle() {
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: 50, height: 40))
+        label.backgroundColor = .clear
+        label.font = UIFont(name: "Helvetica-Bold", size: 25)
+
+        label.text = "Movies"
+        label.numberOfLines = 1
+        label.textColor = UIColor.greyishBrown()
+        label.sizeToFit()
+        label.textAlignment = .center
+
+        self.navigationItem.titleView = label
+    }
+
+    private func setupNavigationBar() {
+        setupSearchController()
+        addNavigationBarTitle()
+        if let bar = navigationController?.navigationBar {
+            bar.barTintColor = .white
+            bar.backgroundColor = .white
+            bar.isTranslucent = false
+            bar.shadowImage = UIImage()
+        }
     }
 
     private func setupSearchController() {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "Search Candies"
+        searchController.searchBar.placeholder = "Search"
         navigationItem.searchController = searchController
         definesPresentationContext = true
     }
