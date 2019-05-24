@@ -10,7 +10,7 @@ import UIKit
 
 class MainViewController: UIViewController {
 
-    @IBOutlet weak var navigationTitle: UILabel!
+    @IBOutlet weak var loadingSpinner: UIActivityIndicatorView!
     @IBOutlet weak var tableView: UITableView!
 
     var tableViewData = [Movie]() {
@@ -30,13 +30,15 @@ class MainViewController: UIViewController {
                            forCellReuseIdentifier: cellIdentifier)
         self.tableView.contentInset = UIEdgeInsets(top: 16, left: 0, bottom: 0, right: 0)
         setupNavigationBar()
+        getPopularMovies()
+    }
 
+    private func getPopularMovies() {
         MovieHandler.shared.getPopularMovies { [weak self] (success, error, movies) in
             if let movies = movies, success, error == nil {
                 self?.tableViewData = movies
             }
         }
-
     }
 
     private func addNavigationBarTitle() {
@@ -76,6 +78,21 @@ class MainViewController: UIViewController {
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
+
+    private func getContent(for seachedText: String?) {
+        if searchBarIsEmpty() {
+            getPopularMovies()
+        } else if let seachedText = seachedText {
+            tableViewData = []
+            loadingSpinner.startAnimating()
+            MovieHandler.shared.getSearchedMovies(for: seachedText) { [weak self] (success, error, movies) in
+                if let movies = movies, success, error == nil {
+                    self?.tableViewData = movies
+                }
+                self?.loadingSpinner.stopAnimating()
+            }
+        }
+    }
 }
 
 extension MainViewController: UITableViewDelegate, UITableViewDataSource {
@@ -111,11 +128,13 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
 extension MainViewController: UISearchBarDelegate {
     // MARK: - UISearchBar Delegate
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        getContent(for: searchBar.text)
     }
 }
 
 extension MainViewController: UISearchResultsUpdating {
     // MARK: - UISearchResultsUpdating Delegate
     func updateSearchResults(for searchController: UISearchController) {
+        getContent(for: searchController.searchBar.text)
     }
 }
