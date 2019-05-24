@@ -13,6 +13,9 @@
 		DD8F007122985049009E10A1 /* SCMovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DD8F006F22985049009E10A1 /* SCMovieApp.xcdatamodeld */; };
 		DD8F00732298504B009E10A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD8F00722298504B009E10A1 /* Assets.xcassets */; };
 		DD8F00762298504B009E10A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD8F00742298504B009E10A1 /* LaunchScreen.storyboard */; };
+		DD8F008422985104009E10A1 /* ContextExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F008122985104009E10A1 /* ContextExtension.swift */; };
+		DD8F008522985104009E10A1 /* ManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F008222985104009E10A1 /* ManagedObjectExtension.swift */; };
+		DD8F008622985104009E10A1 /* PersistentContainerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD8F008322985104009E10A1 /* PersistentContainerExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		DD8F00722298504B009E10A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DD8F00752298504B009E10A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DD8F00772298504B009E10A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD8F008122985104009E10A1 /* ContextExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContextExtension.swift; sourceTree = "<group>"; };
+		DD8F008222985104009E10A1 /* ManagedObjectExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ManagedObjectExtension.swift; sourceTree = "<group>"; };
+		DD8F008322985104009E10A1 /* PersistentContainerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PersistentContainerExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,7 @@
 		DD8F006722985049009E10A1 /* SCMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				DD8F007D229850D7009E10A1 /* Data */,
 				DD8F006822985049009E10A1 /* AppDelegate.swift */,
 				DD8F006A22985049009E10A1 /* ViewController.swift */,
 				DD8F006C22985049009E10A1 /* Main.storyboard */,
@@ -73,6 +80,24 @@
 				DD8F00772298504B009E10A1 /* Info.plist */,
 			);
 			path = SupportingFiles;
+			sourceTree = "<group>";
+		};
+		DD8F007D229850D7009E10A1 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F0080229850EA009E10A1 /* CoreDataHelper */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		DD8F0080229850EA009E10A1 /* CoreDataHelper */ = {
+			isa = PBXGroup;
+			children = (
+				DD8F008122985104009E10A1 /* ContextExtension.swift */,
+				DD8F008222985104009E10A1 /* ManagedObjectExtension.swift */,
+				DD8F008322985104009E10A1 /* PersistentContainerExtensions.swift */,
+			);
+			path = CoreDataHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,7 +173,10 @@
 			files = (
 				DD8F006B22985049009E10A1 /* ViewController.swift in Sources */,
 				DD8F006922985049009E10A1 /* AppDelegate.swift in Sources */,
+				DD8F008522985104009E10A1 /* ManagedObjectExtension.swift in Sources */,
 				DD8F007122985049009E10A1 /* SCMovieApp.xcdatamodeld in Sources */,
+				DD8F008622985104009E10A1 /* PersistentContainerExtensions.swift in Sources */,
+				DD8F008422985104009E10A1 /* ContextExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
